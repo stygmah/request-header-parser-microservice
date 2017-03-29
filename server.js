@@ -15,7 +15,7 @@ app.get('/',(req,res)=>{
   }
   
   result.language = result.language.substring(0, result.language.indexOf(','));
-  result.software = result.software.substring(result.software.indexOf('('), result.software.indexOf(')'));
+  result.software = result.software.substring(result.software.indexOf('('), result.software.indexOf(')')+1);
   
   //send the response
   res.send(result);
