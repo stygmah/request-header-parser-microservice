@@ -8,6 +8,7 @@ app.use(bodyParser.json());
 
 
 app.get('/',(req,res)=>{
+  
   var result = {
     ipadress:req.headers['x-forwarded-for'],
     language:req.headers['accept-language'],
