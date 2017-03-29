@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
   //   language:req,
   //   software:req
   // }
-  console.log(req.headers.host);
+  console.log(req.headers['user-agent']);
   //send the response
   res.send("HELO");
 });
