@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
   //   language:req,
   //   software:req
   // }
-  console.log(req);
+  console.log(req.headers);
   //send the response
   res.send("HELO");
 });
