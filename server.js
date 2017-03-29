@@ -14,6 +14,8 @@ app.get('/',(req,res)=>{
   //   software:req
   // }
   console.log(req.headers['user-agent']);
+  console.log(req.headers['accept-language']);
+  console.log(req.headers['x-forwarded-for']);
   //send the response
   res.send("HELO");
 });
