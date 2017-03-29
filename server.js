@@ -8,14 +8,14 @@ app.use(bodyParser.json());
 
 
 app.get('/',(req,res)=>{
-  var result = {
-    ipadress:req,
-    language:req,
-    software:req
-  }
+  // var result = {
+  //   ipadress:req,
+  //   language:req,
+  //   software:req
+  // }
   console.log(JSON.stringify(req));
   //send the response
-  res.send(JSON.stringify(result));
+  res.send("HELO");
 });
 
 
