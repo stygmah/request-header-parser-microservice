@@ -9,12 +9,13 @@ app.use(bodyParser.json());
 
 app.get('/',(req,res)=>{
   var result = {
-    ipadress:req.headers['user-agent'],
+    ipadress:req.headers['x-forwarded-for'],
     language:req.headers['accept-language'],
-    software:req.headers['x-forwarded-for']
+    software:req.headers['user-agent']
   }
   
   result.language = result.language.substring(0, result.language.indexOf(','));
+  result.software = result.software.substring(result.sofware.indexOf('('), result.sofware.indexOf(')'));
   
   //send the response
   res.send(result);
