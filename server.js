@@ -8,16 +8,16 @@ app.use(bodyParser.json());
 
 
 app.get('/',(req,res)=>{
-  // var result = {
-  //   ipadress:req,
-  //   language:req,
-  //   software:req
-  // }
-  console.log(req.headers['user-agent']);
-  console.log(req.headers['accept-language']);
-  console.log(req.headers['x-forwarded-for']);
+  var result = {
+    ipadress:req.headers['user-agent'],
+    language:req.headers['accept-language'],
+    software:req.headers['x-forwarded-for']
+  }
+  
+  result.language = result.language.substring(0, result.language.indexOf(','));
+  
   //send the response
-  res.send("HELO");
+  res.send(result);
 });
 
 
